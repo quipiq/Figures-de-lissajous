@@ -4,6 +4,7 @@ import pygame
 from pygame.locals import *
 import pygame.gfxdraw
 import sys
+import os
 
 os.system('cls')
 
