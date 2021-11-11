@@ -16,15 +16,12 @@ a = 0
 b = 0
 delta = 0
 t=0
-
 run = True
 
 pygame.init()
-
 fenetre = pygame.display.set_mode((640, 480))
 
 while run:
-
     for evenement in pygame.event.get():
         if evenement.type==KEYDOWN:
             Touche = pygame.key.get_pressed()
@@ -35,13 +32,11 @@ while run:
                 delta_val+=0.01
             if Touche[K_DOWN]:
                 delta_val-=0.01
-
     for i in range(0,1000):
         t+=0.01
         x = A * sin(a*t + delta) 
         y = B * sin(b*t) 
         pygame.gfxdraw.pixel(fenetre, int(x+300), int(y+220), (255,0,0))
-
     delta+=delta_val
     pygame.display.flip()
     sleep(0.01)
