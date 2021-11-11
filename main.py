@@ -6,28 +6,24 @@ import pygame.gfxdraw
 import sys
 import os
 
-run = True
-
-delta_val = 0.01
-
-A = 100
-B = 100
-delta = 0
-t=0
 
 os.system('cls')
-
 print("\n\nFonctionement : \ntouche q : arette le programme\ntouche fleche du haut : augmente delta (accèlère la vitesse de la figure dans un sens)\ntouche fleche du bas : diminue delta (accèlère dans le sens inverse de la fleche du haut la figure, cela permet de l'aretter et de la faire changer de sens)\n\n\n")
 
 a = int(input("""Veuillez entrer la valeur de "a" :"""))
 b = int(input("""Veuillez entrer la valeur de "b" :"""))
 
-pygame.init()
+run = True
+delta_val = 0.01
+A = 100
+B = 100
+delta = 0
+t=0
 
+pygame.init()
 fenetre = pygame.display.set_mode((640, 480))
 
 while run:
-
     for evenement in pygame.event.get():
         if evenement.type==KEYDOWN:
             Touche = pygame.key.get_pressed()
@@ -38,7 +34,6 @@ while run:
                 delta_val+=0.01
             if Touche[K_DOWN]:
                 delta_val-=0.01
-
     for i in range(0,1000):
         t+=0.01
         x = A * sin(a*t + delta) 
